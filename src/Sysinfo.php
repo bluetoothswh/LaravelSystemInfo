@@ -15,8 +15,7 @@ class Sysinfo
     */
     public function __construct()
     {
-    	$linfo 		= new Linfo;
-    	$this->info = $linfo->getParser();
+    	$this->info = (new Linfo)->getParser();
     }
 	/*
     |-------------------------------------------------------------------------------
@@ -55,10 +54,10 @@ class Sysinfo
     public function memory()
     {
     	$ram 	= $this->info->getRam();
-    	$total 	= intval($ram['total']);
-    	$num 	= 1024*1024*1024;
-    	$total  = ceil($total/$num);
-    	return $ram['type'].' '.$total.'GB';
+    	return $ram['type']
+    			.' '
+    			.ceil(intval($ram['total'])/(1024*1024*1024))
+    			.'GB';
     }
     /*
     |-------------------------------------------------------------------------------
@@ -113,7 +112,7 @@ class Sysinfo
     */
     public function webserver()
     {
-    	return $_SERVER['SERVER_SOFTWARE'];
+    	return request()->server('SERVER_SOFTWARE');
     }
     /*
     |-------------------------------------------------------------------------------
