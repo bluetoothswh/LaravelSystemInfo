@@ -5,8 +5,8 @@ use Linfo\Linfo;
 use mysqli;
 class Sysinfo
 {	
-	protected $info;
-	/*
+    protected $info;
+    /*
     |-------------------------------------------------------------------------------
     |
     |  构造函数
@@ -18,7 +18,7 @@ class Sysinfo
     	$linfo 		= new Linfo;
     	$this->info = $linfo->getParser();
     }
-	/*
+    /*
     |-------------------------------------------------------------------------------
     |
     |  获取服务器系统信息
@@ -39,8 +39,8 @@ class Sysinfo
     public function cpu()
     {
     	$cpu   = $this->info->getCPU();
-    	return  $cpu[0]['Model']
-    		   .' '
+    	return $cpu[0]['Model']
+    	       .' '
     	       .$cpu[0]['MHz']
     	       .' '
     	       .$cpu[0]['Vendor'];
@@ -128,7 +128,7 @@ class Sysinfo
         $database       =  env('DB_DATABASE');
         $username       =  env('DB_USERNAME');
         $password       =  env('DB_PASSWORD');
-        $mysqli = new mysqli($host, $username, $password);
+        $mysqli 	= new mysqli($host, $username, $password);
         return $mysqli->server_info;
     }
     /*
