@@ -131,7 +131,7 @@ class Sysinfo
     |
     |-------------------------------------------------------------------------------
     */
-    public function database()
+    public function mysql()
     {
     	$host           =  env('DB_HOST');
         $database       =  env('DB_DATABASE');
@@ -139,5 +139,17 @@ class Sysinfo
         $password       =  env('DB_PASSWORD');
         $mysqli = new \mysqli($host, $username, $password);
         return $mysqli->server_info;
+    }
+
+    /*
+    |-------------------------------------------------------------------------------
+    |
+    |  php的版本
+    |
+    |-------------------------------------------------------------------------------
+    */
+    public function php()
+    {
+    	return phpversion();
     }
 }
