@@ -2,6 +2,7 @@
 
 namespace LaraMall\Admin\Sysinfo;
 use Linfo\Linfo;
+use mysqli;
 class Sysinfo
 {	
 	protected $info;
@@ -137,7 +138,7 @@ class Sysinfo
         $database       =  env('DB_DATABASE');
         $username       =  env('DB_USERNAME');
         $password       =  env('DB_PASSWORD');
-        $mysqli = new \mysqli($host, $username, $password);
+        $mysqli = new mysqli($host, $username, $password);
         return $mysqli->server_info;
     }
 
@@ -151,5 +152,17 @@ class Sysinfo
     public function php()
     {
     	return phpversion();
+    }
+
+    /*
+    |-------------------------------------------------------------------------------
+    |
+    |  获取服务器ip地址
+    |
+    |-------------------------------------------------------------------------------
+    */
+    public function ip()
+    {
+    	return request()->server('SERVER_ADDR');
     }
 }
