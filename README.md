@@ -1,6 +1,10 @@
 # LaravelSystemInfo
 显示服务器相关信息
 
+# 显示截图
+
+<img src="https://laravip.com/github/desktop.png">
+
 # 安装
 ````
 composer require laramall/laravel-system-info
@@ -12,6 +16,8 @@ composer require laramall/laravel-system-info
 ````
 Laravel >=5.5
 ````
+
+
 
 # 使用
 
