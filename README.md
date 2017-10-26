@@ -51,4 +51,7 @@ Sysinfo::mysql();
 //获取php版本信息
 Sysinfo::php() ;
 
+//获取服务器ip
+Sysinfo::ip();
+
 ````
