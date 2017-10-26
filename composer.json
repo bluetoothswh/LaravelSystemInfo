@@ -1,0 +1,36 @@
+{
+    "name": "laramall/laravel-system-info",
+    "type": "package",
+    "description": "查看服务器所有信息 system info",
+    "keywords": ["laravel5.5", "laravle后台组件", "system info"],
+    "homepage": "https://github.com/bluetoothswh/LaravelSystemInfo.git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Sun",
+            "email": "bluetooth_swh@163.com",
+            "homepage": "https://larashuo.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "linfo/linfo":"^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaraMall\\Admin\\Sysinfo\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+     "extra": {
+        "laravel": {
+            "providers": [
+                "LaraMall\\Admin\\Sysinfo\\SysinfoServiceProvider"
+            ],
+            "aliases": {
+                "Sysinfo": "LaraMall\\Admin\\Sysinfo\\Facades\\Sysinfo"
+            }
+        }
+    }
+}
