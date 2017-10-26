@@ -9,14 +9,20 @@
 
 ## 安装
 ````
+//Laravel 5.5 
 composer require laramall/laravel-system-info
+
+//Laravel5.1 ~ 5.4
+需要在 config/app.php的 $providers数组中添加
+
+LaraMall\Admin\Sysinfo\SysinfoServiceProvider::class,
 
 ````
 
 ## 系统要求
 
 ````
-Laravel >=5.5
+Laravel >=5.1
 ````
 
 
