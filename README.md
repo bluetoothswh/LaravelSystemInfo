@@ -17,6 +17,10 @@ composer require laramall/laravel-system-info
 
 LaraMall\Admin\Sysinfo\SysinfoServiceProvider::class,
 
+$aliases数组中添加
+
+'Sysinfo'=>LaraMall\Admin\Sysinfo\Facades\Sysinfo::class,
+
 ````
 
 ## 系统要求
